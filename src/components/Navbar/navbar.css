@@ -1,0 +1,71 @@
+.navv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003C88;
+  padding: 10px 20px;
+  padding-left: 100px;
+  padding-right: 50px;
+  color: white;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-button {
+  background-color: rgb(238, 238, 97);
+  border: 1px solid white;
+  color: rgb(14, 13, 13);
+  padding: 15px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.nav-button.primary {
+  background-color: #4A90FF;
+  border: none;
+  padding: 20px 20px;
+  font-size: 18px;
+}
+
+.nav-button:hover {
+  background-color: #367DFF;
+}
+
+/* Override MUI styles */
+.MuiInputLabel-root {
+  color: white !important;
+}
+
+.MuiSelect-root {
+  color: white !important;
+}
+
+.MuiSvgIcon-root {
+  color: white !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid white !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid white !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom: 1px solid white !important;
+}
+
+.MuiMenuItem-root {
+  color: white;
+  background-color: #003C88;
+}
