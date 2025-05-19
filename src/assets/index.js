@@ -1,0 +1,1 @@
+export {default as Footerlogo} from './images/image.png'
