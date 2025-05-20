@@ -1,17 +1,18 @@
-import React from "react"
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Login from './Pages/Login';
+import Try from './pages/Try';
 
-import Navbar from "./components/Navbar/Navbar"
 function App() {
-  
-
   return (
     <>
-    
-    <Navbar/>
-    
-      
+      <Navbar />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/try" element={<Try />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

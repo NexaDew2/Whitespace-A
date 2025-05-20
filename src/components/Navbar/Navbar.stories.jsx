@@ -1,17 +1,20 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import Navbar from './Navbar';
 
 export default {
-  title: "Components/Navbar",
+  title: 'Components/Navbar',
   component: Navbar,
-  parameters: {
-    docs: {
-      description: {
-        component: "The main navigation bar with logo, dropdown menus, and action buttons for login and trial.",
-      },
-    },
-  },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
-export const Default = () => <Navbar />;
-export const Variant = () => <Navbar />;
+const Template = (args) => <Navbar {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {};
