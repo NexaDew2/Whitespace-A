@@ -8,7 +8,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 const Footer = () => {
   return (
     <div>
-         <footer className="bg-blue-900 text-white md:h-screen sm:h-auto lg:h-screen flex flex-col justify-center items-center py-8 px-4 md:px-8">
+
+         <footer className="bg-[#043873] text-white md:h-screen sm:h-auto lg:h-screen flex flex-col justify-center items-center py-8 px-4 md:px-8">
+
                     <div className="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap justify-between gap-8">
                         {/* Logo and Description */}
                         <div className="flex-1 min-w-[200px]">
@@ -58,29 +60,27 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="mt-8 pt-8 max-w-7xl mx-auto border-t border-gray-900 flex w-full justify-between flex-wrap gap-5 text-lg">
-                        <div className="flex md:flex-row space-y-2 flex-wrap gap-5 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
-                            <div className="flex  ">
-                                <span className="mr-2">🌐</span>
-                                <select className="bg-transparent text-white">
-                                    <option>English</option>
-                                </select>
-                            </div>
-                            <a href="#" className="hover:underline">Terms & privacy</a>
-                            <a href="#" className="hover:underline">Security</a>
-                            <a href="#" className="hover:underline">Status</a>
-                              <p>©2021 Whitepace LLC.</p>
-                        </div>
-                        <div className="flex  space-x-4">
-                          
-                            <div className="flex space-x-3">
-                                
-                                <a href="#" className="hover:text-gray-300"> <FacebookIcon fontSize="small" /></a>
-                                <a href="#" className="hover:text-gray-300"> <TwitterIcon  fontSize="small"/> </a>
-                                <a href="#" className="hover:text-gray-300"><LinkedInIcon fontSize="small"/></a>
-                            </div>
-                        </div>
-                    </div>
+                    <div className="mt-8 pt-8 max-w-7xl mx-auto border-t border-gray-900 flex flex-col sm:flex-row w-full justify-between flex-wrap gap-5 text-lg">
+      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 gap-5 mb-4 sm:mb-0">
+        <div className="flex items-center">
+          <span className="mr-2">🌐</span>
+          <select className="bg-transparent text-white">
+            <option>English</option>
+          </select>
+        </div>
+        <a href="#" className="hover:underline">Terms & privacy</a>
+        <a href="#" className="hover:underline">Security</a>
+        <a href="#" className="hover:underline">Status</a>
+        <p>©2021 Whitepace LLC.</p>
+      </div>
+      <div className="flex space-x-4">
+        <div className="flex space-x-3">
+          <a href="#" className="hover:text-gray-300"><FacebookIcon fontSize="small" /></a>
+          <a href="#" className="hover:text-gray-300"><TwitterIcon fontSize="small" /></a>
+          <a href="#" className="hover:text-gray-300"><LinkedInIcon fontSize="small" /></a>
+        </div>
+      </div>
+    </div>
                 </footer>
     </div>
   )
