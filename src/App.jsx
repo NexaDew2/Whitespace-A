@@ -12,9 +12,6 @@ import YourWork from "./components/YourWork/YourWork";
 function App() {
   return (
     <>
-
-
-
       <Navbar />
       <PlanCardSection />
       <YourWork />
