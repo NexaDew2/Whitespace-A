@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<coverage generated="1747665441547" clover="3.2.0">
-  <project timestamp="1747665441547" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="Footer.jsx" path="C:\Users\vamsi\OneDrive\Desktop\nexadew2a\Whitespace-A\src\components\Footer\Footer.jsx">
+<coverage generated="1747842645618" clover="3.2.0">
+  <project timestamp="1747842645618" name="All files">
+    <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6" elements="18" coveredelements="18" complexity="0" loc="12" ncloc="12" packages="6" files="6" classes="6"/>
+    <package name="Footer">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="11" type="stmt"/>
-
-<coverage generated="1747711691767" clover="3.2.0">
-  <project timestamp="1747711691767" name="All files">
-    <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7" elements="24" coveredelements="24" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
-    <file name="Navbar.jsx" path="D:\nexadew\src\components\Navbar\Navbar.jsx">
-      <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
-      <line num="5" count="8" type="stmt"/>
-      <line num="6" count="8" type="stmt"/>
-      <line num="7" count="8" type="stmt"/>
-      <line num="9" count="36" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="16" count="8" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="37" count="32" type="stmt"/>
-      <line num="71" count="4" type="stmt"/>
-
-    </file>
+      <file name="Footer.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\Footer\Footer.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="OurClientCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="OurClientCard.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\OurClientCard\OurClientCard.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="OurClientSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="OurClientSection.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\OurClientSection\OurClientSection.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="PlansCardSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PlanCardSection.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\PlansCardSection\PlanCardSection.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="PriceCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PriceCard.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\PriceCard\PriceCard.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="SponserSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Sponser.jsx" path="C:\Users\vamsi\OneDrive\Desktop\NexaDew-2\Whitespace-A\src\components\SponserSection\Sponser.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

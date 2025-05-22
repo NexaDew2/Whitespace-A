@@ -1,1 +1,12 @@
 export {default as Footerlogo} from './images/image.png'
+export {default as apple} from './images/Apple.webp'
+export {default as google} from './images/Google.webp'
+export {default as microsoft} from './images/Microsoft.webp'
+export {default as slack} from './images/Slack.webp'
+export {default as BlueQuote} from './images/BlueQuote.webp'
+export {default as WhiteQuote} from './images/Quote.webp'
+export {default as Avator1} from './images/Avater1.webp'
+export {default as Avator2} from './images/Avater2.webp'
+export {default as Avator3} from './images/Avater3.webp'
+export {default as Bg} from './images/Group2.webp'
+
