@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 
+
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import Try from './components/Try/Try';
@@ -18,6 +19,7 @@ import fourth from "./assetss/fourth.png";
 import fivth from "./assetss/fivth.png";
 import seven from "./assetss/seven.png";
 import eight from "./assetss/eight.png";
+
 
 // Background images
 import firstfirst from "./assetss/firstfirst.png";
@@ -154,6 +156,7 @@ function HomePageContent() {
           />
         );
       })}
+
        
       <PlanCardSection />
       <YourWork />
@@ -161,6 +164,9 @@ function HomePageContent() {
       <OurClientSection />
       <Footer />
       
+
+      
+
     </>
   );
 }
