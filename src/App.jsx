@@ -1,12 +1,15 @@
 import React from "react";
 import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Login from "./components/Login/Login";
-import Try from "./components/Try/Try";
+import Navbar from './components/Navbar/Navbar';
+import Login from './components/Login/Login';
+import Try from './components/Try/Try';
+import Footer from './components/Footer/Footer';
+import PlanCardSection from "./components/PlansCardSection/PlanCardSection";
+import Sponser from "./components/SponserSection/Sponser";
+import OurClientSection from "./components/OurClientSection/OurClientSection";
+import YourWork from "./components/YourWork/YourWork";
 import Home from "./components/Home/Home";
-
 // Hero images
 import first from "./assetss/first.png";
 import second from "./assetss/second.png";
@@ -151,7 +154,13 @@ function HomePageContent() {
           />
         );
       })}
+       
+      <PlanCardSection />
+      <YourWork />
+      <Sponser />
+      <OurClientSection />
       <Footer />
+      
     </>
   );
 }
