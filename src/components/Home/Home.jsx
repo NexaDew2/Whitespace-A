@@ -1,7 +1,6 @@
-// src/components/Hero/Hero.jsx
 import React from "react";
 
-function Hero({
+function Home({
   heroTitle,
   heroDescription,
   heroButtonText,
@@ -11,9 +10,9 @@ function Hero({
   backgroundImageStyle,
   backgroundClass = "bg-white",
   textColorClass = "text-black",
-  backgroundSide = "full",
   isFullWidthCentered = false,
   extraPaddingClass = "py-12",
+  centerButton = false,
 }) {
   const contentContainerClass = isFullWidthCentered
     ? `w-full max-w-none text-center px-6 ${extraPaddingClass}`
@@ -30,13 +29,14 @@ function Hero({
     : {};
 
   return (
-    <section className={`${backgroundClass} ${textColorClass}`} style={bgImageStyles}>
+    <section className={`${backgroundClass} ${textColorClass} font-light`} style={bgImageStyles}>
       {backgroundImageStyle?.overlay && (
         <div
+          data-testid="background-overlay"
           style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: "rgba(0,0,0,0.4)",
+            backgroundColor: backgroundImageStyle?.customOverlayColor || "rgba(0,0,0,0.4)",
             zIndex: 0,
           }}
         />
@@ -58,29 +58,42 @@ function Hero({
           flexWrap: "wrap",
         }}
       >
+        {/* Text Section */}
         <div
-          style={{
-            flex: isFullWidthCentered ? "1 1 100%" : "1 1 50%",
-            marginBottom: isFullWidthCentered ? "1rem" : 0,
-          }}
+          className={`${
+            isFullWidthCentered ? "text-center" : "text-left"
+          } w-full md:w-1/2 mb-8 md:mb-0`}
         >
-          <h2 className="text-5xl font-bold mb-6">{heroTitle}</h2>
-          <p className="text-xl mb-8">{heroDescription}</p>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">{heroTitle}</h2>
+          <p className="text-lg sm:text-xl mb-8">{heroDescription}</p>
+
           {heroButtonText && (
-            <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg">
-              {heroButtonText}
-            </button>
+            <div
+              className={`w-full flex justify-center ${
+                centerButton
+                  ? "md:justify-center"
+                  : "md:justify-start lg:justify-center xl:justify-start"
+              }`}
+            >
+              <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg">
+                {heroButtonText}
+              </button>
+            </div>
           )}
         </div>
 
+        {/* Image Section */}
         {!isFullWidthCentered && heroImage && (
           <div
-            style={{
-              flex: "1 1 50%",
-              textAlign: imagePosition === "left" ? "left" : "right",
-            }}
+            className={`w-full md:w-1/2 ${
+              imagePosition === "left" ? "text-left" : "text-right"
+            }`}
           >
-            <img src={heroImage} alt={heroTitle} className="max-w-full h-auto" />
+            <img
+              src={heroImage}
+              alt={heroTitle}
+              className="max-w-full h-auto mx-auto md:mx-0"
+            />
           </div>
         )}
       </div>
@@ -88,4 +101,4 @@ function Hero({
   );
 }
 
-export default Hero;
+export default Home;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import logoo from '../../assetss/logoo.png';
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="bg-[#003C88] text-white px-6 md:px-[100px] py-3">
       <div className="flex justify-between items-center">
         <div className="logo">
-          <img alt="logo" className="h-[40px]" src="/logo.png" />
+          <img alt="logoo" className="h-[40px]" src={logoo} />
         </div>
 
         {/* Mobile menu toggle button */}
