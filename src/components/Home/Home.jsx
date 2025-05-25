@@ -1,104 +1,124 @@
 import React from "react";
 
-function Home({
+const Home = ({
   heroTitle,
   heroDescription,
   heroButtonText,
   heroImage,
   imagePosition = "right",
   backgroundImage,
-  backgroundImageStyle,
-  backgroundClass = "bg-white",
-  textColorClass = "text-black",
-  isFullWidthCentered = false,
+  backgroundImageStyle = {},
+  backgroundClass = "",
+  textColorClass = "",
   extraPaddingClass = "py-12",
   centerButton = false,
-}) {
-  const contentContainerClass = isFullWidthCentered
-    ? `w-full max-w-none text-center px-6 ${extraPaddingClass}`
-    : `max-w-7xl mx-auto px-6 ${extraPaddingClass}`;
+  isFullWidthCentered = false,
+  addingextra,
+}) => {
+  const {
+    size = "cover",
+    position = "center",
+    overlay = false,
+    customOverlayColor,
+  } = backgroundImageStyle;
 
-  const bgImageStyles = backgroundImage
+  const backgroundStyles = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: backgroundImageStyle?.size || "contain",
-        backgroundPosition: backgroundImageStyle?.position || "center",
+        backgroundSize: size,
+        backgroundPosition: position,
         backgroundRepeat: "no-repeat",
-        position: "relative",
+        ...(overlay && {
+          backgroundBlendMode: "overlay",
+          backgroundColor: customOverlayColor || undefined,
+        }),
       }
     : {};
 
+  const heroTitleStyle = {
+    fontWeight: "900",
+    marginBottom: "1rem",
+    fontSize: "80px",
+    lineHeight: "1.1",
+    letterSpacing: "-0.5px",
+  };
+
   return (
-    <section className={`${backgroundClass} ${textColorClass} font-light`} style={bgImageStyles}>
-      {backgroundImageStyle?.overlay && (
-        <div
-          data-testid="background-overlay"
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: backgroundImageStyle?.customOverlayColor || "rgba(0,0,0,0.4)",
-            zIndex: 0,
-          }}
-        />
-      )}
-
-      <div
-        className={contentContainerClass}
-        style={{
-          position: "relative",
-          zIndex: 1,
-          display: "flex",
-          flexDirection: isFullWidthCentered
-            ? "column"
-            : imagePosition === "left"
-            ? "row-reverse"
-            : "row",
-          alignItems: "center",
-          justifyContent: isFullWidthCentered ? "center" : "space-between",
-          flexWrap: "wrap",
-        }}
+    <>
+      <style>
+        {`
+          @media (max-width: 1024px) {
+            .hero-title {
+              font-size: 56px !important;
+            }
+          }
+          @media (max-width: 640px) {
+            .hero-title {
+              font-size: 38px !important;
+            }
+          }
+        `}
+      </style>
+      <section
+        role="region"
+        data-testid="home-section"
+        className={`${backgroundClass} ${extraPaddingClass} w-full`}
+        style={backgroundStyles}
       >
-        {/* Text Section */}
         <div
-          className={`${
-            isFullWidthCentered ? "text-center" : "text-left"
-          } w-full md:w-1/2 mb-8 md:mb-0`}
+          data-testid="container"
+          className={`max-w-8xl mx-auto px-1 sm:px-2 lg:px-3 xl:px-16 flex flex-col lg:flex-row items-center gap-6 ${
+            isFullWidthCentered ? "justify-center" : "justify-between"
+          }`}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">{heroTitle}</h2>
-          <p className="text-lg sm:text-xl mb-8">{heroDescription}</p>
+          {/* Text Section */}
+          <div
+            className={`w-full ${
+              isFullWidthCentered ? "lg:w-full max-w-4xl mx-auto" : "lg:w-[65%]"
+            } ${
+              imagePosition === "right" ? "order-1" : "order-2"
+            } ${textColorClass} text-center ${
+              isFullWidthCentered ? "lg:text-center" : "lg:text-left"
+            }`}
+          >
+            <h2 className="hero-title" style={heroTitleStyle}>
+              {heroTitle}
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl mb-6">{heroDescription}</p>
+            {heroButtonText && (
+  <button
+    className={`px-12 py-4 rounded-md text-white font-semibold transition ${
+      centerButton ? "mx-auto" : ""
+    }`}
+    style={{ backgroundColor: "#4F9CF7" }}
+  >
+    {heroButtonText}
+  </button>
+)}
+<p className="text-base sm:text-3xl lg:text-xl mb-6 pt-10">{addingextra}</p>
 
-          {heroButtonText && (
+
+
+          </div>
+
+          {/* Image Section */}
+          {heroImage && (
             <div
-              className={`w-full flex justify-center ${
-                centerButton
-                  ? "md:justify-center"
-                  : "md:justify-start lg:justify-center xl:justify-start"
-              }`}
+              className={`w-full ${
+                isFullWidthCentered ? "lg:w-full" : "lg:w-[35%]"
+              } ${imagePosition === "right" ? "order-2" : "order-1"} flex justify-center`}
             >
-              <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg">
-                {heroButtonText}
-              </button>
+              <img
+                src={heroImage}
+                alt="Hero"
+                className="w-full max-w-[600px] sm:max-w-[720px] mx-auto"
+              />
             </div>
           )}
         </div>
-
-        {/* Image Section */}
-        {!isFullWidthCentered && heroImage && (
-          <div
-            className={`w-full md:w-1/2 ${
-              imagePosition === "left" ? "text-left" : "text-right"
-            }`}
-          >
-            <img
-              src={heroImage}
-              alt={heroTitle}
-              className="max-w-full h-auto mx-auto md:mx-0"
-            />
-          </div>
-        )}
-      </div>
-    </section>
+      </section>
+    </>
   );
-}
+};
 
 export default Home;

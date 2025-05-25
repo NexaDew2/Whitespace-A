@@ -1,10 +1,13 @@
 import React from "react";
-import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Login from "./components/Login/Login";
-import Try from "./components/Try/Try";
+import Navbar from './components/Navbar/Navbar';
+import Login from './components/Login/Login';
+import Try from './components/Try/Try';
+import Footer from './components/Footer/Footer';
+import PlanCardSection from "./components/PlansCardSection/PlanCardSection";
+import Sponser from "./components/SponserSection/Sponser";
+import OurClientSection from "./components/OurClientSection/OurClientSection";
 import Home from "./components/Home/Home";
 
 // Hero images
@@ -37,21 +40,25 @@ const contentSections = [
       overlay: true,
     },
   },
-  {
-    heroTitle: "Project Management",
-    heroDescription:
-      "Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.",
-    heroButtonText: "Get Started",
-    heroImage: second,
-    imagePosition: "right",
-    backgroundImage: secondsecond,
-    backgroundImageStyle: {
-      size: "contain",
-      position: "left top",
-      overlay: false,
-      customOverlayColor: "rgba(255,255,255,0.6)", 
-    },
+{
+  heroTitle: "Project Management",
+  heroDescription:
+    "Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.",
+  heroButtonText: "Get Started",
+  heroImage: second,
+  imagePosition: "right",
+  backgroundImage: secondsecond,
+  backgroundImageStyle: {
+    size: "auto 550px",                   
+    position: "left 80%",              
+    repeat: "no-repeat",                 
+    overlay: true,                       
+    customOverlayColor: "rgba(255, 255, 255, 0.8)",
+    
+    filter: "brightness(0.3) saturate(0.4)",  
   },
+  backgroundClass: "bg-white",          
+},
   {
     heroTitle: "Work together",
     heroDescription:
@@ -77,17 +84,20 @@ const contentSections = [
     imagePosition: "left",
   },
   {
-    heroTitle: "Your work, everywhere you are",
-    heroDescription:
-      "Access your notes from your computer, phone or tablet by synchronising with various services, including whitepace, Dropbox and OneDrive. The app is available on Windows, macOS, Linux, Android and iOS. A terminal app is also available!",
-    heroButtonText: "Try Taskey",
-    backgroundImage: fivefive,
-    backgroundImageStyle: {
-      size: "contain",
-      position: "left top",
-      overlay: false,
-    },
+  heroTitle: "Your work, everywhere you are",
+  heroDescription:
+    "Access your notes from your computer, phone or tablet by synchronising with various services, including whitepace, Dropbox and OneDrive. The app is available on Windows, macOS, Linux, Android and iOS. A terminal app is also available!",
+  heroButtonText: "Try Taskey",
+  backgroundImage: fivefive,
+  backgroundImageStyle: {
+    size: "auto 900px",                     
+    position: "left top",                 
+    repeat: "no-repeat",                   
+    overlay: true,
+    filter: "brightness(1.1) saturate(0.1)",     
   },
+  backgroundClass: "bg-white",             
+},
   {
     heroTitle: "100% your data",
     heroDescription:
@@ -114,6 +124,8 @@ const contentSections = [
     heroTitle: "Try Whitepace today",
     heroDescription: "Get started for free. Add your whole team as your needs grow.",
     heroButtonText: "Try Taskey free",
+    addingextra:"On a big team? Contact sales"
+    
   },
 ];
 
@@ -124,7 +136,7 @@ function HomePageContent() {
       {contentSections.map((section, idx) => {
         const blueSections = [0, 3, 5, 7, 8];
         const backgroundClass = blueSections.includes(idx)
-          ? "bg-[#003C88]"
+          ? "bg-[#073874]"
           : "bg-white";
         const textColorClass = blueSections.includes(idx)
           ? "text-white"
@@ -135,22 +147,33 @@ function HomePageContent() {
         const extraPaddingClass = [5, 6, 7, 8].includes(idx)
           ? "py-40"
           : "py-24";
-
         const centerButton = [5, 8].includes(idx);
-
+        
         return (
-          <Home
-            key={idx}
-            {...section}
-            backgroundClass={backgroundClass}
-            textColorClass={textColorClass}
-            backgroundSide={backgroundSide}
-            isFullWidthCentered={isFullWidthCentered}
-            extraPaddingClass={extraPaddingClass}
-            centerButton={centerButton}
-          />
+          <React.Fragment key={idx}>
+            {/* Section */}
+            <Home
+              {...section}
+              backgroundClass={backgroundClass}
+              textColorClass={textColorClass}
+              backgroundSide={backgroundSide}
+              isFullWidthCentered={isFullWidthCentered}
+              extraPaddingClass={extraPaddingClass}
+              centerButton={centerButton}
+            />
+
+            {/* Insert PlanCardSection after index 4 */}
+            {idx === 4 && <PlanCardSection />}
+
+            {/* Insert Sponser after indexes 5 and 6 */}
+            {idx === 6 && <Sponser />}
+
+            {/* Insert OurClientSection before last section (idx 8) */}
+            {idx === 7 && <OurClientSection />}
+          </React.Fragment>
         );
       })}
+      
       <Footer />
     </>
   );
@@ -158,14 +181,11 @@ function HomePageContent() {
 
 function App() {
   const location = useLocation();
-
-  // Render Home only when path is NOT /login or /try
   const isHomePage = !["/login", "/try"].includes(location.pathname);
 
   return (
     <>
       {isHomePage && <HomePageContent />}
-
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/try" element={<Try />} />
@@ -175,4 +195,3 @@ function App() {
 }
 
 export default App;
-  
