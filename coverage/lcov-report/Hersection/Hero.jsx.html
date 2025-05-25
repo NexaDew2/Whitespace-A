@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Footer/Footer.jsx</title>
+    <title>Code coverage report for Hersection/Hero.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Footer</a> Footer.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">Hersection</a> Hero.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">78.78% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>26/33</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -151,15 +151,16 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,9 +171,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,6 +185,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,102 +243,107 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
-import { Footerlogo } from '../../assets'
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// src/components/Hero/Hero.jsx
+import React from "react";
 &nbsp;
+function Hero({
+  heroTitle,
+  heroDescription,
+  heroButtonText,
+  heroImage,
+  imagePosition = "right",
+  backgroundImage,
+  backgroundImageStyle,
+  backgroundClass = "bg-white",
+  textColorClass = "text-black",
+  backgroundSide = "full",
+  isFullWidthCentered = false,
+  extraPaddingClass = "py-12",
+}) {
+  const contentContainerClass = isFullWidthCentered
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >`w-full max-w-none text-center px-6 ${extraPaddingClass}`</span>
+    : `max-w-7xl mx-auto px-6 ${extraPaddingClass}`;
 &nbsp;
-const Footer = () =&gt; {
+  const bgImageStyles = backgroundImage
+    ? {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: backgroundImageStyle?.size || "contain",
+        backgroundPosition: backgroundImageStyle?.position || "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+      }
+    : {};
+&nbsp;
   return (
-    &lt;div&gt;
+    &lt;section className={`${backgroundClass} ${textColorClass}`} style={bgImageStyles}&gt;
+      {backgroundImageStyle?.overlay &amp;&amp; (
+        &lt;div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.4)",
+            zIndex: 0,
+          }}
+        /&gt;
+      )}
 &nbsp;
-         &lt;footer className="bg-[#043873] text-white md:h-screen sm:h-auto lg:h-screen flex flex-col justify-center items-center py-8 px-4 md:px-8"&gt;
-&nbsp;
-                    &lt;div className="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap justify-between gap-8"&gt;
-                        {/* Logo and Description */}
-                        &lt;div className="flex-1 min-w-[200px]"&gt;
-                            &lt;h1 className="text-2xl font-bold mb-4 flex items-center"&gt;
-                                &lt;img src={Footerlogo} alt="" className='w-auto' /&gt;
-                            &lt;/h1&gt;
-                            &lt;p className="text-lg"&gt;
-                                Whitepace was created for the new ways we live and work. We make a better workspace around the world
-                            &lt;/p&gt;
-                        &lt;/div&gt;
-&nbsp;
-                        &lt;div className="flex-1 min-w-[150px]"&gt;
-                            &lt;h2 className="text-2xl font-semibold mb-4"&gt;Product&lt;/h2&gt;
-                            &lt;ul className="text-lg space-y-2"&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Overview&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Pricing&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Customer stories&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/div&gt;
-&nbsp;
-                        &lt;div className="flex-1 min-w-[150px]"&gt;
-                            &lt;h2 className="text-2xl font-semibold mb-4"&gt;Resources&lt;/h2&gt;
-                            &lt;ul className="text-lg space-y-2"&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Guides &amp; tutorials&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Help center&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/div&gt;
-&nbsp;
-                        &lt;div className="flex-1 min-w-[150px]"&gt;
-                            &lt;h2 className="text-2xl font-semibold mb-4"&gt;Company&lt;/h2&gt;
-                            &lt;ul className="text-lg space-y-2"&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;About us&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Careers&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" className="hover:underline"&gt;Media kit&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/div&gt;
-&nbsp;
-                        &lt;div className="flex-1 min-w-[200px]"&gt;
-                            &lt;h2 className="text-2xl font-semibold mb-4"&gt;Try It Today&lt;/h2&gt;
-                            &lt;p className="text-lg mb-4"&gt;
-                                Get started for free. Add your whole team as your needs grow.
-                            &lt;/p&gt;
-                            &lt;button className="bg-blue-400 text-white px-4 py-2 rounded-lg hover:bg-blue-500"&gt;
-                                Start Today
-                            &lt;/button&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-&nbsp;
-                    &lt;div className="mt-8 pt-8 max-w-7xl mx-auto border-t border-gray-900 flex flex-col sm:flex-row w-full justify-between flex-wrap gap-5 text-lg"&gt;
-      &lt;div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 gap-5 mb-4 sm:mb-0"&gt;
-        &lt;div className="flex items-center"&gt;
-          &lt;span className="mr-2"&gt;🌐&lt;/span&gt;
-          &lt;select className="bg-transparent text-white"&gt;
-            &lt;option&gt;English&lt;/option&gt;
-          &lt;/select&gt;
+      &lt;div
+        className={contentContainerClass}
+        style={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: isFullWidthCentered
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >"column"</span>
+            : imagePosition === "left"
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >"row-reverse"</span>
+            : "row",
+          alignItems: "center",
+          justifyContent: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"center" </span>: "space-between",
+          flexWrap: "wrap",
+        }}
+      &gt;
+        &lt;div
+          style={{
+            flex: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"1 1 100%" </span>: "1 1 50%",
+            marginBottom: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"1rem" </span>: 0,
+          }}
+        &gt;
+          &lt;h2 className="text-5xl font-bold mb-6"&gt;{heroTitle}&lt;/h2&gt;
+          &lt;p className="text-xl mb-8"&gt;{heroDescription}&lt;/p&gt;
+          {heroButtonText &amp;&amp; (
+            &lt;button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg"&gt;
+              {heroButtonText}
+            &lt;/button&gt;
+          )}
         &lt;/div&gt;
-        &lt;a href="#" className="hover:underline"&gt;Terms &amp; privacy&lt;/a&gt;
-        &lt;a href="#" className="hover:underline"&gt;Security&lt;/a&gt;
-        &lt;a href="#" className="hover:underline"&gt;Status&lt;/a&gt;
-        &lt;p&gt;©2021 Whitepace LLC.&lt;/p&gt;
+&nbsp;
+        {!isFullWidthCentered &amp;&amp; heroImage &amp;&amp; (
+          &lt;div
+            style={{
+              flex: "1 1 50%",
+              textAlign: imagePosition === "left" ? <span class="branch-0 cbranch-no" title="branch not covered" >"left" </span>: "right",
+            }}
+          &gt;
+            &lt;img src={heroImage} alt={heroTitle} className="max-w-full h-auto" /&gt;
+          &lt;/div&gt;
+        )}
       &lt;/div&gt;
-      &lt;div className="flex space-x-4"&gt;
-        &lt;div className="flex space-x-3"&gt;
-          &lt;a href="#" className="hover:text-gray-300"&gt;&lt;FacebookIcon fontSize="small" /&gt;&lt;/a&gt;
-          &lt;a href="#" className="hover:text-gray-300"&gt;&lt;TwitterIcon fontSize="small" /&gt;&lt;/a&gt;
-          &lt;a href="#" className="hover:text-gray-300"&gt;&lt;LinkedInIcon fontSize="small" /&gt;&lt;/a&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-                &lt;/footer&gt;
-    &lt;/div&gt;
-  )
+    &lt;/section&gt;
+  );
 }
 &nbsp;
-export default Footer</pre></td></tr></table></pre>
+export default Hero;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-25T04:32:28.491Z
+                at 2025-05-22T12:06:58.127Z
             </div>
         <script src="../prettify.js"></script>
         <script>
