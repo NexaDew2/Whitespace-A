@@ -49,7 +49,8 @@ const contentSections = [
       size: "contain",
       position: "left top",
       overlay: false,
-      customOverlayColor: "rgba(255,255,255,0.6)",
+      customOverlayColor: "rgba(255,255,255,0.6)", 
+      
     },
   },
   {
@@ -123,11 +124,19 @@ function App() {
       <Navbar />
       {contentSections.map((section, idx) => {
         const blueSections = [0, 3, 5, 7, 8];
-        const backgroundClass = blueSections.includes(idx) ? "bg-[#003C88]" : "bg-white";
-        const textColorClass = blueSections.includes(idx) ? "text-white" : "text-black";
+        const backgroundClass = blueSections.includes(idx)
+          ? "bg-[#003C88]"
+          : "bg-white";
+        const textColorClass = blueSections.includes(idx)
+          ? "text-white"
+          : "text-black";
+
         const backgroundSide = idx === 1 ? "left" : "full";
         const isFullWidthCentered = [5, 8].includes(idx);
-        const extraPaddingClass = [5, 6, 7, 8].includes(idx) ? "py-40" : "py-24";
+        const extraPaddingClass = [5, 6, 7, 8].includes(idx)
+          ? "py-40"
+          : "py-24";
+
         const centerButton = [5, 8].includes(idx);
 
         return (

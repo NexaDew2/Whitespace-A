@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748095033494" clover="3.2.0">
-  <project timestamp="1748095033494" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="37" coveredconditionals="34" methods="4" coveredmethods="4" elements="49" coveredelements="46" complexity="0" loc="8" ncloc="8" packages="3" files="3" classes="3"/>
+<coverage generated="1748146408790" clover="3.2.0">
+  <project timestamp="1748146408790" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="39" coveredconditionals="36" methods="9" coveredmethods="9" elements="66" coveredelements="63" complexity="0" loc="18" ncloc="18" packages="8" files="8" classes="8"/>
     <package name="Footer">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Footer.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\Footer\Footer.jsx">
@@ -11,9 +11,9 @@
       </file>
     </package>
     <package name="Home">
-      <metrics statements="3" coveredstatements="3" conditionals="33" coveredconditionals="30" methods="1" coveredmethods="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="35" coveredconditionals="32" methods="1" coveredmethods="1"/>
       <file name="Home.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\Home\Home.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="33" coveredconditionals="30" methods="1" coveredmethods="1"/>
+        <metrics statements="3" coveredstatements="3" conditionals="35" coveredconditionals="32" methods="1" coveredmethods="1"/>
         <line num="17" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="21" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="31" count="4" type="stmt"/>
@@ -26,6 +26,46 @@
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="OurClientCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="OurClientCard.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\OurClientCard\OurClientCard.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="OurClientSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="OurClientSection.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\OurClientSection\OurClientSection.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="PlansCardSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PlanCardSection.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\PlansCardSection\PlanCardSection.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="PriceCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PriceCard.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\PriceCard\PriceCard.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="SponserSection">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Sponser.jsx" path="C:\Users\aksha\OneDrive\Desktop\client\Whitespace-A\src\components\SponserSection\Sponser.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
       </file>
     </package>
   </project>
