@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -50,7 +50,6 @@ const contentSections = [
       position: "left top",
       overlay: false,
       customOverlayColor: "rgba(255,255,255,0.6)", 
-      
     },
   },
   {
@@ -118,7 +117,7 @@ const contentSections = [
   },
 ];
 
-function App() {
+function HomePageContent() {
   return (
     <>
       <Navbar />
@@ -153,6 +152,20 @@ function App() {
         );
       })}
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  const location = useLocation();
+
+  // Render Home only when path is NOT /login or /try
+  const isHomePage = !["/login", "/try"].includes(location.pathname);
+
+  return (
+    <>
+      {isHomePage && <HomePageContent />}
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/try" element={<Try />} />
@@ -162,3 +175,4 @@ function App() {
 }
 
 export default App;
+  

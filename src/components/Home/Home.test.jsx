@@ -10,12 +10,25 @@ const defaultProps = {
 };
 
 describe("Home Component", () => {
-  it("renders title, description, and button", () => {
+  it("renders button", () => {
     render(<Home {...defaultProps} />);
-    expect(screen.getByText("Welcome")).toBeInTheDocument();
-    expect(screen.getByText("This is the hero section.")).toBeInTheDocument();
+    
     expect(screen.getByText("Get Started")).toBeInTheDocument();
   });
+
+  it("renders title", () => {
+    render(<Home {...defaultProps} />);
+    expect(screen.getByText("Welcome")).toBeInTheDocument();
+    
+  });
+  it("renders description", () => {
+    render(<Home {...defaultProps} />);
+   
+    expect(screen.getByText("This is the hero section.")).toBeInTheDocument();
+    
+  });
+
+  
 
   it("renders hero image when not centered", () => {
     render(<Home {...defaultProps} />);
