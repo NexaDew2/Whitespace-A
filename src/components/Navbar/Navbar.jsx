@@ -29,12 +29,12 @@ export default function Navbar() {
             <select
               key={label}
               aria-label={`${label} Dropdown`}
-              className="bg-transparent text-white text-sm focus:outline-none"
+              className=" text-white text-sm focus:outline-none "
             >
-              <option value="">{label}</option>
-              <option value="1">{label} 1</option>
-              <option value="2">{label} 2</option>
-              <option value="3">{label} 3</option>
+              <option value="" className="text-black">{label}</option>
+              <option value="1" className="text-black">{label} 1</option>
+              <option value="2" className="text-black">{label} 2</option>
+              <option value="3" className="text-black">{label} 3</option>
             </select>
           ))}
 
@@ -60,10 +60,10 @@ export default function Navbar() {
             aria-label={`${label} Dropdown`}
             className="bg-transparent text-white text-base px-2 py-2 focus:outline-none border border-white rounded"
           >
-            <option value="">{label}</option>
-            <option value="1">{label} 1</option>
-            <option value="2">{label} 2</option>
-            <option value="3">{label} 3</option>
+            <option value="" className="text-black">{label}</option>
+            <option value="1" className="text-black">{label} 1</option>
+            <option value="2" className="text-black">{label} 2</option>
+            <option value="3" className="text-black">{label} 3</option>
           </select>
         ))}
 
