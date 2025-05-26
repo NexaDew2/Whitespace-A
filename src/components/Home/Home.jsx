@@ -36,13 +36,14 @@ const Home = ({
     : {};
 
   const heroTitleStyle = {
+
     fontWeight: "700",
+
     marginBottom: "1rem",
     fontSize: "80px",
     lineHeight: "1.1",
     letterSpacing: "-0.5px",
-   
-    
+
   };
 
   return (
@@ -83,7 +84,9 @@ const Home = ({
               isFullWidthCentered ? "lg:text-center" : "lg:text-left"
             }`}
           >
+
             <h2 className="hero-title font-inter" style={heroTitleStyle}>
+
               {heroTitle}
             </h2>
             <p className="text-base sm:text-lg lg:text-xl mb-6">{heroDescription}</p>
