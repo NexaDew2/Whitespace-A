@@ -142,6 +142,7 @@ function HomePageContent() {
           ? "text-white"
           : "text-black";
 
+
         const backgroundSide = idx === 1 ? "left" : "full";
         const isFullWidthCentered = [5, 8].includes(idx);
         const extraPaddingClass = [5, 6, 7, 8].includes(idx)
