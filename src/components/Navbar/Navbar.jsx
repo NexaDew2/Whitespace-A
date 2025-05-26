@@ -1,93 +1,88 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 import logoo from '../../assetss/logoo.png';
 
-function Navbar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedValues, setSelectedValues] = useState({});
-  const navItems = ['Products', 'Solutions', 'Resources', 'Pricing'];
-
-  const handleChange = (label) => (event) => {
-    setSelectedValues((prev) => ({
-      ...prev,
-      [label]: event.target.value,
-    }));
-  };
 
   return (
-    <nav className="bg-[#003C88] text-white px-6 md:px-[100px] py-3">
+    <nav className="bg-[#073874] text-white px-6 lg:px-[100px] py-5">
       <div className="flex justify-between items-center">
+        {/* Logo */}
         <div className="logo">
-          <img src={logoo} alt="logo" className="h-[40px]" />
+          <img alt="logoo" className="h-[40px]" src={logoo} />
         </div>
 
-        <div className="md:hidden">
+        {/* Mobile menu toggle button */}
+        <div className="lg:hidden">
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="menu-toggle"
             className="p-2 cursor-pointer text-white text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? '✕' : '☰'}
+            {menuOpen ? "✕" : "☰"}
           </button>
         </div>
 
-        <div className="hidden md:flex items-center gap-6">
-          {navItems.map((label) => (
+        {/* Desktop menu (visible from 1024px+) */}
+        <div className="hidden lg:flex items-center gap-6">
+          {["Products", "Solutions", "Resources", "Pricing"].map((label) => (
             <select
               key={label}
-              value={selectedValues[label] || ''}
-              onChange={handleChange(label)}
-              className="bg-transparent border-b border-white text-white text-sm focus:outline-none"
+              aria-label={`${label} Dropdown`}
+
+              className=" text-white text-sm focus:outline-none "
             >
-              <option value="">{label}</option>
-              <option value="1">{label} 1</option>
-              <option value="2">{label} 2</option>
-              <option value="3">{label} 3</option>
+              <option value="" className="text-black">{label}</option>
+              <option value="1" className="text-black">{label} 1</option>
+              <option value="2" className="text-black">{label} 2</option>
+              <option value="3" className="text-black">{label} 3</option>
+
             </select>
           ))}
 
-          <Link to="/login">
-            <button className="bg-yellow-200 border border-white text-black px-6 py-2 rounded text-sm hover:bg-yellow-300">
+          <a href="/login" data-discover="true">
+            <button className="bg-yellow-200 border border-white text-black px-6 py-3 rounded text-sm hover:bg-yellow-300">
               Login
             </button>
-          </Link>
-          <Link to="/try">
-            <button className="bg-[#4A90FF] text-white px-6 py-2 rounded text-sm hover:bg-[#367DFF]">
+          </a>
+
+          <a href="/try" data-discover="true">
+            <button className="bg-[#4A90FF] text-white px-6 py-3 rounded text-sm hover:bg-[#367DFF]">
               Try Whitepace free
             </button>
-          </Link>
+          </a>
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden flex flex-col gap-4 mt-4">
-          {navItems.map((label) => (
-            <select
-              key={label}
-              value={selectedValues[label] || ''}
-              onChange={handleChange(label)}
-              className="bg-transparent border-b border-white text-white text-sm focus:outline-none"
-            >
-              <option value="">{label}</option>
-              <option value="1">{label} 1</option>
-              <option value="2">{label} 2</option>
-              <option value="3">{label} 3</option>
-            </select>
-          ))}
+      {/* Mobile & Tablet dropdown menu (only below 1024px) */}
+      <div className={`lg:hidden flex flex-col gap-4 mt-4 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'}`}>
+        {["Products", "Solutions", "Resources", "Pricing"].map((label) => (
+          <select
+            key={label}
+            aria-label={`${label} Dropdown`}
+            className="bg-transparent text-white text-base px-2 py-2 focus:outline-none border border-white rounded"
+          >
 
-          <Link to="/login">
-            <button className="bg-yellow-200 border border-white text-black px-6 py-2 rounded text-sm hover:bg-yellow-300">
-              Login
-            </button>
-          </Link>
-          <Link to="/try">
-            <button className="bg-[#4A90FF] text-white px-6 py-2 rounded text-sm hover:bg-[#367DFF]">
-              Try Whitepace free
-            </button>
-          </Link>
-        </div>
-      )}
+            <option value="" className="text-black">{label}</option>
+            <option value="1" className="text-black">{label} 1</option>
+            <option value="2" className="text-black">{label} 2</option>
+            <option value="3" className="text-black">{label} 3</option>
+
+          </select>
+        ))}
+
+        <a href="/login" data-discover="true">
+          <button className="bg-yellow-200 border border-white text-black px-6 py-2 rounded text-sm hover:bg-yellow-300">
+            Login
+          </button>
+        </a>
+
+        <a href="/try" data-discover="true">
+          <button className="bg-[#4A90FF] text-white px-6 py-2 rounded text-sm hover:bg-[#367DFF]">
+            Try Whitepace free
+          </button>
+        </a>
+      </div>
     </nav>
   );
 }
-
-export default Navbar;

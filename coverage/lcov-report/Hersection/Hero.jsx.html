@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Navbar/Navbar.jsx</title>
+    <title>Code coverage report for Hersection/Hero.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Navbar</a> Navbar.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">Hersection</a> Hero.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">78.78% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>26/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -147,16 +147,35 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,7 +194,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,7 +222,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,93 +245,97 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
-import logoo from '../../assetss/logoo.png';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// src/components/Hero/Hero.jsx
+import React from "react";
 &nbsp;
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+function Hero({
+  heroTitle,
+  heroDescription,
+  heroButtonText,
+  heroImage,
+  imagePosition = "right",
+  backgroundImage,
+  backgroundImageStyle,
+  backgroundClass = "bg-white",
+  textColorClass = "text-black",
+  backgroundSide = "full",
+  isFullWidthCentered = false,
+  extraPaddingClass = "py-12",
+}) {
+  const contentContainerClass = isFullWidthCentered
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >`w-full max-w-none text-center px-6 ${extraPaddingClass}`</span>
+    : `max-w-7xl mx-auto px-6 ${extraPaddingClass}`;
+&nbsp;
+  const bgImageStyles = backgroundImage
+    ? {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: backgroundImageStyle?.size || "contain",
+        backgroundPosition: backgroundImageStyle?.position || "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+      }
+    : {};
 &nbsp;
   return (
-    &lt;nav className="bg-[#073874] text-white px-6 lg:px-[100px] py-5"&gt;
-      &lt;div className="flex justify-between items-center"&gt;
-        {/* Logo */}
-        &lt;div className="logo"&gt;
-          &lt;img alt="logoo" className="h-[40px]" src={logoo} /&gt;
-        &lt;/div&gt;
+    &lt;section className={`${backgroundClass} ${textColorClass}`} style={bgImageStyles}&gt;
+      {backgroundImageStyle?.overlay &amp;&amp; (
+        &lt;div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.4)",
+            zIndex: 0,
+          }}
+        /&gt;
+      )}
 &nbsp;
-        {/* Mobile menu toggle button */}
-        &lt;div className="lg:hidden"&gt;
-          &lt;button
-            aria-label="menu-toggle"
-            className="p-2 cursor-pointer text-white text-2xl"
-            onClick={() =&gt; setMenuOpen(!menuOpen)}
-          &gt;
-            {menuOpen ? "✕" : "☰"}
-          &lt;/button&gt;
-        &lt;/div&gt;
-&nbsp;
-        {/* Desktop menu (visible from 1024px+) */}
-        &lt;div className="hidden lg:flex items-center gap-6"&gt;
-          {["Products", "Solutions", "Resources", "Pricing"].map((label) =&gt; (
-            &lt;select
-              key={label}
-              aria-label={`${label} Dropdown`}
-              className="bg-transparent text-white text-sm focus:outline-none"
-            &gt;
-              &lt;option value=""&gt;{label}&lt;/option&gt;
-              &lt;option value="1"&gt;{label} 1&lt;/option&gt;
-              &lt;option value="2"&gt;{label} 2&lt;/option&gt;
-              &lt;option value="3"&gt;{label} 3&lt;/option&gt;
-            &lt;/select&gt;
-          ))}
-&nbsp;
-          &lt;a href="/login" data-discover="true"&gt;
-            &lt;button className="bg-yellow-200 border border-white text-black px-6 py-3 rounded text-sm hover:bg-yellow-300"&gt;
-              Login
+      &lt;div
+        className={contentContainerClass}
+        style={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: isFullWidthCentered
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >"column"</span>
+            : imagePosition === "left"
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >"row-reverse"</span>
+            : "row",
+          alignItems: "center",
+          justifyContent: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"center" </span>: "space-between",
+          flexWrap: "wrap",
+        }}
+      &gt;
+        &lt;div
+          style={{
+            flex: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"1 1 100%" </span>: "1 1 50%",
+            marginBottom: isFullWidthCentered ? <span class="branch-0 cbranch-no" title="branch not covered" >"1rem" </span>: 0,
+          }}
+        &gt;
+          &lt;h2 className="text-5xl font-bold mb-6"&gt;{heroTitle}&lt;/h2&gt;
+          &lt;p className="text-xl mb-8"&gt;{heroDescription}&lt;/p&gt;
+          {heroButtonText &amp;&amp; (
+            &lt;button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 text-lg"&gt;
+              {heroButtonText}
             &lt;/button&gt;
-          &lt;/a&gt;
-&nbsp;
-          &lt;a href="/try" data-discover="true"&gt;
-            &lt;button className="bg-[#4A90FF] text-white px-6 py-3 rounded text-sm hover:bg-[#367DFF]"&gt;
-              Try Whitepace free
-            &lt;/button&gt;
-          &lt;/a&gt;
+          )}
         &lt;/div&gt;
-      &lt;/div&gt;
 &nbsp;
-      {/* Mobile &amp; Tablet dropdown menu (only below 1024px) */}
-      &lt;div className={`lg:hidden flex flex-col gap-4 mt-4 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'}`}&gt;
-        {["Products", "Solutions", "Resources", "Pricing"].map((label) =&gt; (
-          &lt;select
-            key={label}
-            aria-label={`${label} Dropdown`}
-            className="bg-transparent text-white text-base px-2 py-2 focus:outline-none border border-white rounded"
+        {!isFullWidthCentered &amp;&amp; heroImage &amp;&amp; (
+          &lt;div
+            style={{
+              flex: "1 1 50%",
+              textAlign: imagePosition === "left" ? <span class="branch-0 cbranch-no" title="branch not covered" >"left" </span>: "right",
+            }}
           &gt;
-            &lt;option value=""&gt;{label}&lt;/option&gt;
-            &lt;option value="1"&gt;{label} 1&lt;/option&gt;
-            &lt;option value="2"&gt;{label} 2&lt;/option&gt;
-            &lt;option value="3"&gt;{label} 3&lt;/option&gt;
-          &lt;/select&gt;
-        ))}
-&nbsp;
-        &lt;a href="/login" data-discover="true"&gt;
-          &lt;button className="bg-yellow-200 border border-white text-black px-6 py-2 rounded text-sm hover:bg-yellow-300"&gt;
-            Login
-          &lt;/button&gt;
-        &lt;/a&gt;
-&nbsp;
-        &lt;a href="/try" data-discover="true"&gt;
-          &lt;button className="bg-[#4A90FF] text-white px-6 py-2 rounded text-sm hover:bg-[#367DFF]"&gt;
-            Try Whitepace free
-          &lt;/button&gt;
-        &lt;/a&gt;
+            &lt;img src={heroImage} alt={heroTitle} className="max-w-full h-auto" /&gt;
+          &lt;/div&gt;
+        )}
       &lt;/div&gt;
-    &lt;/nav&gt;
+    &lt;/section&gt;
   );
 }
+&nbsp;
+export default Hero;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -322,7 +343,7 @@ export default function Navbar() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-25T11:46:30.865Z
+                at 2025-05-22T12:06:58.127Z
             </div>
         <script src="../prettify.js"></script>
         <script>
